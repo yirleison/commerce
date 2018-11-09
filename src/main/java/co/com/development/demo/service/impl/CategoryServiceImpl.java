@@ -36,5 +36,10 @@ public class CategoryServiceImpl implements CategoryServiceI {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
+
+	@Override
+	public ArrayList<CategoryModel> list() {
+		return this.categoryDaoImpl.list();
+	}
+		
 }

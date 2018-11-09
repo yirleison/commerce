@@ -1,5 +1,8 @@
 package co.com.development.demo.dao.impl;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +26,7 @@ public class CategoryDaoImpl implements CategoryDaoI {
 
 	@Override
 	public Optional<CategoryModel> findById(Long id) {
+
 		return this.categoryRepository.findById(id);
 	}
 
@@ -30,6 +34,11 @@ public class CategoryDaoImpl implements CategoryDaoI {
 	public boolean exitstsById(Long id) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public ArrayList<CategoryModel> list() {
+		return (ArrayList<CategoryModel>) this.categoryRepository.findAll();
 	}
 
 }
